@@ -24,7 +24,7 @@ y = y / 7;
 
 ```
 
-## Function
+## Functions
 
 Functions can be declared in two ways: one is using the `function` keyword, and the other is with the `=>` notation. Regardless of the syntax used, they can be called in the same way. Functions are very powerful in JavaScript and more time will be spent on them later.
 
@@ -44,13 +44,44 @@ subtract(18, 6);
 // 12
 ```
 
+## Data Structures
+
+The two basic data structures of JavaScript are arrays and objects, which are more or less equivalent to Python lists and dictionaries, or Java arrays and hashmaps. Arrays are linear, defined using `[]`, and can be accessed by position index using a `[<index>]` syntax; objects are key-value pairs, defined using `{}`, and indexed into using strings in a `['<key>']` syntax. 
+
+Object keys are always strings, so they are defined without using quotations, and can accessed without using quotations using the `.<key>` syntax. We tend to only use the `['<key>']` syntax when we need to access a dynamic position in the object, but we rarely do this; objects are typically treated like structs and classes, where their entries are assumed to be static. 
+
+```js
+const myArr = ['a', 'b', 'c'];
+const myObj = {a: 'hello', b: 'world'};
+
+console.log(myArr[2]); // => 'c'
+console.log(myObj['a']); // => 'hello'
+console.log(myObj.b); // => 'world'
+
+```
+
+Arrays can have objects, and objects can have arrays, which allows for the creation of complex structures. These also directly correspond to the structures of JSON files, which are a main way that information is shared between JavaScript and other web-based services. 
+
+
+Objects can be turned into key-value pairs using the `Object.entries` function, or into just keys or just values using `Object.keys` and `Object.values`. They can also be created from an array of key-value pairs using `Object.fromEntries`.
+
+```js
+const keys = Object.keys(myObj); // => ['a']
+const vals = Object.values(myObj); // => ['hello']
+
+const pairs = [['first', 1], ['second', 2], ['third', 3]]
+const pairsObj = Object.fromEntries(pairs)
+```
+
+Combined with destructuring and iteration, which will be discussed more later, objects and arrays are incredibly powerful tools.
+
 ## Classes
 
-JavaScript has the same object-oriented capabilities as Java, though it uses the `constructor` method to define initiation, rather than using the class' name (like in Java) or some variant of `init` (e.g. Python). Functions are indicated with the keyword `function`, instance variables and methods are prefaced `this` inside the object, and static properties and methods are defined using the keyword `static`, 
+JavaScript has the same object-oriented capabilities as Java, though it uses the `constructor` method to define initiation, rather than using the class' name (like in Java) or some variant of `init` (e.g. Python). Default values can be provided in any function definition using a single-equals assignment operation. Functions are indicated with the keyword `function`, instance variables and methods are prefaced `this` inside the object, and static properties and methods are defined using the keyword `static`.
 
 ```js
 class Vehicle {
-    constructor (make, model, wheels) {
+    constructor (make, model, wheels=4) {
         this.make = make;
         this.model = model;
         this.wheels = wheels;
@@ -64,6 +95,17 @@ class Vehicle {
         return 'Vroom!';
     }
 }
+```
+
+Instances are instantiated using the `new` keyword, the class name, and any arguments necessary for the constructor. Static methods are accessed by calling `<class>.<method>`, while instance methods are called using `<instance>.<method>`.
+
+```js
+const truck = new Vehicle('Ford', 'F150);
+console.log(Vehicle.goVroom()) // 'Vroom!'
+console.log(truck.toString()) // 'The Ford F150 has 4 wheels'
+
+const cycle = new Vehicle('Harley-Davidson', 'Street Glide', 2)
+console.log(cycle.toString()) // 'The Harley-Davidson Street Glide has 2 wheels.
 ```
 
 ## Strings
@@ -100,7 +142,7 @@ console.log('0' == false) // true; the string '0' is truthily equal to the numbe
 
 ## If-Else and Ternary
 
-Like in most languages, if-statements let control flow be changed on the basis of conditions. JavaScript also has 'ternary operators,' which allow if-statements to be compressed into single-line expressions for briefer uses; these can often be useful in template strings or when switching between binary state.
+Like in most languages, if-statements let control flow be changed on the basis of conditions. JavaScript also has 'ternary operators,' which allow if-statements to be compressed into single-line expressions for briefer uses; these can often be useful in template strings or when switching between binary state. Ternaries use a `?` to indicate the end of the conditional and a `:` to seperate the `if` action from the `else` action.
 
 ```js
 if (x === 2) {
