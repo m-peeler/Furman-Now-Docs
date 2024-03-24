@@ -4,6 +4,12 @@ title: Syntax
 parent: Intro to JavaScript
 nav_order: 1
 ---
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+---
 
 # Basic Syntax
 
