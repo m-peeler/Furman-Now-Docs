@@ -68,7 +68,9 @@ console.log(sum, prod); // => 598, -6262326067200
 ```
 
 ### .sort()
-`.sort()` is used to order a list. Its callback is given two arguments, usually called `a` and `b`, which are two elements from the list, and is expected to return a "comparison" between the two. If `a` is greater than `b`, the function is expected to return a number greater than 0; if `b` is greater than `a`, the function should return a number less than 0; if `a` is equal to `b`, the function should return 0. This is simple enough with numbers; a comparison can simply be implemented as `a - b`, or (if you want to be nice and keep the outputs strictly as -1, 0, and 1) `(a > b) - (b > a)` (this works because `-` coerces `true` and `false` into 0 and 1, so if `a` is greater, `true - false` is `1 - 0`,  if `b` is greater, `false - true` is `0 - 1`, and if `a` equals `b`, `false - false` is `0 - 0`). This callback can integrate in more complex behavior as needed to correctly sort the list into the desired order.
+`.sort()` is used to order a list. Its callback is given two arguments, usually called `a` and `b`, which are two elements from the list, and is expected to return a "comparison" between the two. `.sort()` will automatically deal with the logistics of how to efficiently sort the array, so long as it has the ability to compare elements against eachother. 
+
+If `a > b`, the callback function is expected to return some number `> 0`; if `b > a`, the function should return some number `< 0`; if `a === b`, the function should return `0`. This is simple enough with numbers; a comparison can simply be implemented as `a - b`, or (if you want to be nice and keep the outputs strictly as -1, 0, and 1) `(a > b) - (b > a)` (this works because `-` coerces `true` and `false` into 0 and 1, so if `a` is greater, `true - false` is `1 - 0`,  if `b` is greater, `false - true` is `0 - 1`, and if `a` equals `b`, `false - false` is `0 - 0`). But this callback can integrate in more complex behavior as needed to correctly sort the list into the desired order.
 
 ```js
 const sorted = arr.sort((a, b) => (a > b) - (b > a));
