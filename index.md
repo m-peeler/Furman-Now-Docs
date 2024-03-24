@@ -1,6 +1,7 @@
 ---
 title: Home
 layout: home
+nav_order: 1
 ---
 
 Welcome to the documentation for Furman Now!, the app for campus life at Furman University. Originally developed in 2020 and 2021, this documentation pertains to the 2024 porting conducted by Michael Peeler for Dr. Fahad Sultan's CSC-475, *Computer Science Senior Seminar* class. 
