@@ -4,6 +4,12 @@ title: Array Callback Methods
 parent: Intro to JavaScript
 nav_order: 4
 ---
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+---
 # Callback Methods
 Many methods in JavaScript take as an argument a "callback" function which is called on some input; arrays make especially heavy use of these to apply various effects to all of the values inside the array.
 
