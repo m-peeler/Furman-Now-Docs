@@ -81,14 +81,14 @@ class Vehicle {
 ## Strings
 
 String literals can be surrounded in either `'single quotes'` or `"double quotes"`; template strings are surrounded 
-in `\`backticks\`` and are called 'templates' because you can place dynamic content inside of them. This can be variables,
+in `backticks` and are called 'templates' because you can place dynamic content inside of them. This can be variables,
 but can also be more complex content, like equations or function calls. Strings can be 
 printed to the console using `console.log()` for debugging purposes, or used in various other ways.
 
 ```js
 const x = 14;
 const y = 12;
-const template = `\`${x} ${y / 2}\`` 
+const template = `${x} ${y / 2}` 
 
 console.log(template)
 // Prints out "14 7"
