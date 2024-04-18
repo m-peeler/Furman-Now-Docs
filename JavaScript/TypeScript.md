@@ -71,5 +71,3 @@ class Animal {
 
 const human = new Animal('human', 2);
 ```
-
-Arrays and objects are also annotated. Arrays are indicated by placing `[]` at the end of the type allowed in the array;

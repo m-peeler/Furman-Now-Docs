@@ -163,3 +163,13 @@ const cond = true;
 const val = cond ? 12 : 13;
 // Cond is conditional; if true, 12, else, 13
 ```
+
+## Template Strings
+
+To create a string which has dynamic elements, we can use template strings. These are encapsulated within backticks, and can have variables included inside of a `${}` construct. These can include things as simple as a variable, as well as more complex constructs like function calls or ternary statements.
+
+```js
+const includeAll = true;
+const vals = ['Hello', 'World', 'Folks'];
+const str = `${vals[0]} ${includeAll ? vals[1] : vals[2]}`;
+```
