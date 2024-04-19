@@ -11,3 +11,6 @@ has_children: true
 {:toc}
 ---
 # Codebase Documentation
+## Basic Structure
+
+The Furman Now! codebase is broken into three parts: the serverside Python scrapers, the serverside PHP "API", and the React Native codebase for the mobile application. 
