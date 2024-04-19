@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Components
+title: Component Basics
 parent: Intro to React Native
 nav_order: 1
 ---
@@ -11,8 +11,8 @@ nav_order: 1
 {:toc}
 ---
 
-# Components
-
+# Component Basics
+## Constructing Components
 React Native works within a component-based system that mimics HTML. Consider a basic HTML element on a website. It would be built in the following way:
 
 ```html
@@ -23,7 +23,12 @@ React Native works within a component-based system that mimics HTML. Consider a 
 
 In React Native, we would construct a component in a similar fashion. However, some slight adjustments are needed. React Native components need to be included in some sort of function that can be called by JavaScript, and the elements to construct the document object must be returned from the function. Thus, elements are typically written as a function which returns the tags building the component. This has an added benefit of allowing additional JavaScript code to be executed within the body of the function as is needed. Second, we need specific indications that there will be text elements inside that should be rendered as text. Thus, we write our component like this.
 
+We import `View` and `Text` from the `'react-native'` library, and since we are building a component we also should import `React` from `'react'`.
+
 ```jsx
+import React from 'react';
+import { View, Text } from 'react-native';
+
 function Component() {
     return (
         <View>
@@ -36,6 +41,20 @@ function Component() {
 ```
 
 Rather than `<div>`, React Native uses `<View>`; rather than lower-case names, all components have capital letters, like in `<Text>`. 
+
+To call a component, we would use the name of the function within angled braces; this tag must either be self closing, with a `\>` at the end, or have a closing tag which starts with `</`. 
+
+```jsx
+<Component />
+
+// or 
+
+<Component>
+    ...
+</Component>
+```
+
+## Assigning Styles
 
 Just as CSS can apply styling to HTML components, `styles` can be applied to React Native elements. CSS typically uses names in 'kebab-case', such as `border-radius` or `background-color`; React Native styles use camelcase, typically of the exact same names, such as `borderRadius` or `backgroundColor`.
 
@@ -92,6 +111,101 @@ function Component() {
     );
 }
 ```
+
+## Recieving Props
+
+When a component is called, it recieves the specified props inside of an object; the key is the prop name that has been assigned in the component creation, and the key value is the value that has been assigned. If there are components placed within the tags of the component being called, they are passed as a special component called `children`. If there are no children components within a tag, it should be "self closing" by incluidng `/>` at the end of the tag instead of a second closing `</_name_>` tag; a `<Text />` tag is equivalent to a return. 
+```jsx
+function HigherComponent() {
+    return (
+        <Box
+            text="Title"
+        >
+            <Text>
+                Hello, World
+            </Text>
+        </Box>
+    );
+}
+
+// text is the prop assigned above;
+// children are the tags inside of it.
+function Box({text, children}) {
+    return (
+        <View>
+            <Text>
+                // JavaScript variables must be encapsulated inside of {}
+                {text}
+            </Text>
+            <Text />
+            {children}
+        </View>
+    );
+}
+```
+
+## PropTypes
+
+Furman Now! follows the AirBNB codebase styleguide in the VS Code linter for React Native. Part of their specifications include using the `propTypes` library to outline the expected props that will be provided to the component when it is called, what their type should be, and what default values should be used for non-required properties. 
+
+`propTypes` are defined for a component by specifying the component's name followed by `propTypes`, which is then assigned an object which matches the style of the prop types. If the prop is required, we include `.isRequired` at the end of the type; if it is not required, a default value *must* be included. This is done in a second assignment, this time assigning `defaultProps` for the component.
+
+```jsx
+import PropTypes from 'prop-types';
+
+function Component({text, nums, date, obj, arr}) {
+    return (
+        <Text>
+            {text}
+        </Text>
+    )
+} 
+Component.propTypes = {
+    text: PropTypes.string.isRequired,
+    nums: PropTypes.number,
+    date: PropTypes.instanceOf(Date).isRequired,
+    arr: PropTypes.arrayOf(
+        PropTypes.oneOfType(
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.instanceOf(Date)
+        )
+    ).isRequired,
+    obj: PropTypes.shape({
+        age: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+    }).isRequired,
+};
+Component.defaultProps = {
+    nums: 10,
+};
+
+```
+
+## Conditional Components
+To only display components conditionally, we use boolean operations. If a component is placed within a `{}` and `&&`ed with a boolean `true`, then it will be shown; a `false` will hide the component. This can be a single raw boolean, or a chain of various attributes being compared together.
+
+```jsx
+function Component() {
+    return (
+        {true &&
+            (<Text>
+                Hello
+            </Text>
+        )}
+    );
+}
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
