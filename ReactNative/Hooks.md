@@ -32,6 +32,8 @@ Any time you wish to change the value of the state, the `set` function should be
 `useState` can take a single argument, which is the initial value of the state; if it is not provided, the state defaults to `undefined`.
 
 ```jsx
+import React, { useState } from 'react';
+
 function Component() {
     const [state, setState] = useState("Hello, World");
     setState("Goodbye, World");
@@ -52,6 +54,8 @@ The setter for `useState` is asynchronous. This means that it can take time - at
 `setState` can take in a value which is directly assigned to the `state`, but also take in an anonymous function which is provided as input the current value of the state and then operate on the value as defined. This can ensure that multiple assignments within the same render are updated in the correct order and to the right value, especially when doing things like incrementing.
 
 ```jsx
+import React, { useState } from 'react';
+
 function Component() {
     const [state, setState] = useState(0);
     setState(1);
@@ -62,5 +66,71 @@ function Component() {
             {state}
         </Text>
     )
+}
+```
+
+## useRef
+`useState` is used when we wish to re-render every time it changes; however, we sometimes do not wish to re-render, and additionally may wish to not have the drawbacks of async changes which `useState` requires. This necessitates the use of `useRef`. 
+
+`useRef` is primarily used to get internal information from a component; if you assign the `ref` property on a component to the `ref` recieved from `useRef`, you will be able to access internal methods and states. `ref`s always store their value within the attribute `ref.current`, so to access these attributes you would use `ref.current.` followed by their name. 
+
+
+```jsx
+import React, { useRef } from 'react';
+import MapView from 'react-native-map';
+
+function Component() {
+    const ref = useRef(null);
+
+    return (
+        <MapView
+            ref={ref}
+        >
+    );
+}
+```
+
+## useEffect
+`useEffect` is used to cause render-specific effects; the React documentation suggests its best use is when connecting to external systems like remote APIs or other websites. `useEffect` takes as input a function which is re-run every render. This is often more common than we would like, and thus a second argument of a 'dependency array' can be provided. If given, the `useEffect` function will only be run when a value within the dependency array is changed. Since we often only want `useEffect` to run on the first render of a component (say, when we are initally pulling information from the server) we will often provide an empty dependency array (i.e. a blank list, `[]`). 
+
+```jsx
+import React, { useEffect } from 'react';
+import { Text } from 'react-native';
+
+function Component() {
+    useEffect(() => 
+        console.log("Hello, World")
+    , []);
+
+    return (
+        <Text>
+            Hello!
+        </Text>
+    );
+}
+
+```
+`useEffect` will sometimes need resources to be unallocated when a component is finished being used. The most common example of this would be if we are using a `setInterval`, which runs a function every `n` milliseconds. (This is helpful for, say, refreshing the weather every 20 seconds) 
+
+To terminate this repetative calling, we must invoke the `clearInterval` function on our interval. `useEffect` builds in help for this: if this needs to be done, the `return` from the function can simply be a function that clears all resources which need to be cleared. Using `setInterval` and `clearInterval` as an example, this looks like:
+
+```jsx
+import React, { useEffect } from 'react';
+import { Text } from 'react-native';
+
+function Component() {
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log("Refresh");
+        }, 20_000);
+        return () => clearInterval(interval);
+    }, []);
+
+
+    return (
+        <Text>
+            Hello!
+        </Text>
+    );
 }
 ```
