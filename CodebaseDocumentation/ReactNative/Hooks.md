@@ -25,7 +25,7 @@ Furman Now! uses a number of custom hooks, extracted into this function so that 
 <dt>processFetch</dt>
 <dd>Anonymous function: Provided with the data fetched from fetchFrom, or the cache of it saved, and returns the processed form of the data. Defaults to no processing.</dd>
 <dt>discardCache</dt>
-<dd>Anonymous function: Provided with the result after processFetch has been called on the cached data. If it returns true, the cache will be deleted, and its value will not be used in the app. Defaults to never discard cache.</dd>
+<dd>Anonymous function: Provided with the result after <tt>processFetch</tt> has been called on the cached data. If it returns true, the cache will be deleted, and its value will not be used in the app. Defaults to never discard cache.</dd>
 </dl>
 
 **Returns:**
@@ -37,7 +37,7 @@ Furman Now! uses a number of custom hooks, extracted into this function so that 
 <dt>fetching</dt>
 <dd>Boolean (state): Indicates whether data is currently being fetched from the web; true indicates asynch fetch has not yet finished.</dd>
 <dt>exists</dt>
-<dd>Boolean (state): Indicates whether there has been a successful fetch or load yet; if true, `data` has information within it.</dd>
+<dd>Boolean (state): Indicates whether there has been a successful fetch or load yet; if true, <tt>data</tt> has information within it.</dd>
 <dt>refresh</dt>
 <dd>Anonymous Function: Invokable to re-fetch data from the provided.</dd>
 </dl>
@@ -53,7 +53,7 @@ Every other custom hook in Furman Now! is effectively a wrapper for `useDataLoad
 *Same as `useDataLoadFetchCache`*
 <dl>
 <dt>data</dt>
-<dd>String || Object: Either a string heading, or an object with data for an event. Event data is provided unchanged from the server pull, with the exception of `eventdate `which is parsed into a `Date` object, and `allDay`, which is a boolean if the time of `eventdate` is midnight.</dd>
+<dd>String || Object: Either a string heading, or an object with data for an event. Event data is provided unchanged from the server pull, with the exception of <tt>eventdate</tt> which is parsed into a <tt>Date</tt> object, and <tt>allDay</tt>, which is a boolean if the time of <tt>eventdate</tt> is midnight.</dd>
 </dl>
 
 Provides a list of either string headings or objects representing recent and upcoming athletics events. Events are fetched from the server and partitioned into either `Recent` (if they have already finished), `Today`, `Tomorrow`, `This`(ie This Week) and `Next` (ie Next Week) using `arrayPartition`. Events within each partition are 
