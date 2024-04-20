@@ -534,8 +534,68 @@ Tab displaying various credit information. Version information, which is present
 <dd>String: text displayed before any input is added.</dd>
 </dl>
 
+A stylized, reusable search bar component that is placed at the top of a screen.
+
 ## HomeScreenNavButton
+*Props:*
+<dl>
+<dt>styles</dt>
+<dd>
+    <dl>
+    <dt>label</dt>
+    <dd>Object: styles for the text label of the button.</dd>
+    <dt>buttonStyles</dt>
+    <dd>Object or Function: styles passed to the <tt>Button</tt> component.</dt>
+    </dl>
+</dd>
+<dt>onPress</dt>
+<dd>Function: Called when the button is pressed.</dd>
+<dt>toPage</dt>
+<dd>Page: Page that the button directs to, which provides the icon of the button and the button's name</dd>
+</dl>
+
+A button that displays the icon of a `Page` on the front, and its name in text under the button, and calls a function when pressed. 
 
 ## StyledTextButton
+*Props:*
+<dl>
+<dt>message</dt>
+<dd>String: text displayed in the center of the button</dd>
+<dt>onPress</dt>
+<dd>Function: Callback that is called when the button is pressed.</dd>
+<dt>numberOfLines</dt>
+<dd>Number: optional cap on how many lines of text appear in the button.</dd>
+</dl>
+
+A pre-styled button that can display text in its center and call a function when pressed.
 
 ## Weather
+*Props:*
+<dl>
+<dt>height</dt>
+<dd>Number or String: height of the Weather component</dd>
+<dt>width</dt>
+<dd>Number or String: width of the Weather component</dd>
+</dl>
+
+Live weather data is accessed with `useWeatherReport` and background images are accessed using `useWeatherWidgetImages`. Weather is updated every 30 seconds, the background image updates every 20 seconds, and every 60 seconds it refreshes to see if there are new background images. Temperature and percipitation chances are shown above the image using the `TempDisplay` and `PercipDisplay` components, respectively. 
+
+### TempDisplay
+<dl>
+<dt>high</dt>
+<dd>String: forecasted high temperature</dd>
+<dt>low</dt>
+<dd>String: forecasted low temperature</dd>
+<dt>current</dt>
+<dd>String: current temperature</dd>
+<dt>units</dt>
+<dd>String: "F" for Faherenheit or "C" for Celsius</dd>
+</dl>
+
+### PercipDisplay
+<dl>
+<dt>chancePercipitation</dt>
+<dd>String: empty string or a string with the percent chance of percipitation</dd>
+<dt>weatherEmoji</dt>
+<dd>String: hex value for a unicode emoji code point</dd>
+</dl>
