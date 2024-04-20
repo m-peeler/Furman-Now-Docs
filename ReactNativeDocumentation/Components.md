@@ -151,9 +151,9 @@ Since the `ref` from the `FUNowMapView` is necessary for moving the map, as well
 <dt>locationText</dt>
 <dd>String: summary of building's location</dd>
 <dt>category</dt>
-<dd>String: category to decide color of element</dd>
+<dd>String: category to decide color of element.</dd>
 <dt>onPress</dt>
-<dd>Function: triggered when building is clicked on</dd>
+<dd>Function: triggered when building is clicked on.</dd>
 </dl>
 
 Displays the building on a map. Must be a direct child of the `MapView`, i.e. cannot be a grandchild inside of a `View`. 
@@ -176,8 +176,7 @@ Displays the building on a map. Must be a direct child of the `MapView`, i.e. ca
 </dl></dd>
 </dl>
 
-
-An overlay that includes information about the building that has been clicked on.
+An overlay that includes information about the building that has been clicked on. Additionally, the overlay includes buttons which link to directions to the location on the system's maps (using `linkForDirections` to generate the link), and to the building's website (if it has one). Holding down on the former allows location to be shared, holding on the latter allows the website to be shared. 
 
 ## News Components
 ### NewsCardWrapper
