@@ -166,3 +166,13 @@ Fetches information about each of the transit routes.
 **Returns:** *Same as `useDataLoadFetchCache`*
 
 Fetches information about each stop, parsing integers, floats and times for positions, distances, headings, stops until arrival, and updated times, and assembling `latitude` and `longitude` into a `coordinate`. `data` is a list of these stops. 
+
+## useWeatherReport
+**Returns:** *Same as `useDataLoadFetchCache`*
+
+Fetches information about the current weather report.
+
+## useWeatherWidgetImages
+**Returns:** *Same as `useDataLoadFetchCache`*
+
+Fetches a list of display images for the weather widget.
