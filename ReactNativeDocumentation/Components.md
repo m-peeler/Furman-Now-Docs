@@ -178,23 +178,183 @@ Displays the building on a map. Must be a direct child of the `MapView`, i.e. ca
 An overlay that includes information about the building that has been clicked on. Additionally, the overlay includes buttons which link to directions to the location on the system's maps (using `linkForDirections` to generate the link), and to the building's website (if it has one). Holding down on the former allows location to be shared, holding on the latter allows the website to be shared. 
 
 ## News Components
-### NewsCardWrapper
+### NewsCardWrapper 
+*Props:*
+<dl>
+<dt>children</dt>
+<dd>Array or node: Either one node or an array of nodes</dd>
+<dt>height</dt>
+<dd>Number: card's height</dd>
+<dt>width</dt>
+<dd>Number: card's width</dd>
+<dt>headline</dt>
+<dd>String: article's headline</dd>
+<dt>link</dt>
+<dd>String: link to article's website.</dd>
+<dt>color</dt>
+<dd>String: hex code of card's background color</dd>
+<dt>publisher</dt>
+<dd>String: name of publication of article</dd>
+<dt>publisherLink</dt>
+<dd>String: link to publication website</dd>
+</dl>
+
+Adds a context menu to wrap `NewsItemCard`s with, allowing for sharing of content and accessing links to the site. 
 
 ### NewsItemCard
+*Props:*
+<dl>
+<dt>height</dt>
+<dd>Number: card's height</dd>
+<dt>width</dt>
+<dd>Number: card's width</dd>
+<dt>article</dt>
+<dd>Article</dd>
+<dt>publisher</dt>
+<dd>String: name of publication of article</dd>
+<dt>publisherLink</dt>
+<dd>String: link to publication website</dd>
+<dt>publisherImageLink</dt>
+<dd>String: link to default display image for articles from the publisher without an image link.</dd>
+</dl>
+
+Provided with attributes for an `Article` and seperates it into a specific type of NewsCard based on its `MediaType`.
 
 ### NewsLinkCard
+*Props:*
+<dl>
+<dt>height</dt>
+<dd>Number: card's height</dd>
+<dt>width</dt>
+<dd>Number: card's width</dd>
+<dt>article</dt>
+<dd>Article</dd>
+<dt>publisher</dt>
+<dd>String: name of publication of article</dd>
+<dt>publisherLink</dt>
+<dd>String: link to publication website</dd>
+<dt>publisherImageLink</dt>
+<dd>String: link to default display image for articles from the publisher without an image link.</dd>
+<dt>onPress</dt>
+<dd>Function: function called when card is pressed, allowing an external function to know it has been pressed</dd>
+<dt>touchState</dt>
+<dd>
+    <dl>
+    <dt>state</dt>
+    <dd>boolean: if card is currently being pressed. Allows an external function to know when the card has been pressed. </dd>
+    <dt>setter</dt>
+    <dd>Function: sets state to value provided.</dd>
+    <dt></dt>
+    </dl>
+</dd>
+</dl>
+
+NewsCard for `LINK` `MediaType`. Displays image, as well as headline, author, publication, section, and publication date. Clicking send the reader to the article.
 
 ### NewsYoutubeCard
+*Props:*
+<dl>
+<dt>height</dt>
+<dd>Number: card's height</dd>
+<dt>width</dt>
+<dd>Number: card's width</dd>
+<dt>article</dt>
+<dd>Article</dd>
+<dt>publisher</dt>
+<dd>String: name of publication of article</dd>
+<dt>publisherLink</dt>
+<dd>String: link to publication website</dd>
+<dt>publisherImageLink</dt>
+<dd>String: link to default display image for articles from the publisher without an image link.</dd>
+</dl>
+
+NewsCard for `VIDEO` `MediaType`. Before click, it displays a `NewsLinkCard` for the video with the video's thumbnail as the image, as well as headline, author, publication, section, and publication date. Clicking activates the YouTube embed, playing the video.
 
 ### NewsCardStack
+*Props:*
+<dl>
+<dt>cardWidth</dt>
+<dd>Number: card's width</dd>
+<dt>cardHeigh</dt>
+<dd>Number: card's height</dd>
+<dt>articles</dt>
+<dd>Array: an array of articles</dd>
+<dt>sources</dt>
+<dd>Object: an object containing information on the various publishers with publisherID as the key</dd>
+</dl>
+
+`Carousel` of multiple articles, with a `NewsStackFrontCard` on top. 
 
 ### NewsStackFrontCard
+*Props:*
+<dl>
+<dt>cardWidth</dt>
+<dd>Number: card's width</dd>
+<dt>cardHeigh</dt>
+<dd>Number: card's height</dd>
+<dt>articles</dt>
+<dd>Array: an array of articles</dd>
+<dt>publisher</dt>
+<dd>Object: an object of publisher information</dd>
+<dt>onPress</dt>
+<dd>Function: a function called with no arguments when the stack front card is pressed.</dd>
+</dl>
 
+Front card of a `NewsCardStack` that displays a message about reading articles and cycles through the photos/titles of articles within its list.
 
 ## Transit Components
 ### BusMarker
+*Props:*
+<dl>
+<dt>name</dt>
+<dd>String: bus' name</dd>
+<dt>color</dt>
+<dd>String: hex color to tint the bus icon</dd>
+<dt>rotation</dt>
+<dd>Number: the angle of rotation of the bus. Android can do flat icons, so a compass heading is preferred; iOS cannot do flat icons, so the compass heading should have the <tt>Map</tt>'s current heading subtracted from it to get the bus' relative heading on the map.</dd>
+<dt>coordinate</dt>
+<dd><dl>
+    <dt>latitude</dt>
+    <dd>Number: Building's latitude</dd>
+    <dt>longitude</dt>
+    <dd>Number: Building's longitude.</dd>
+</dl></dd>
+</dl>
+
+Marker to show transit vehicles' current location and directional heading.
 
 ### BusRoute
+*Props:*
+<dl>
+<dt>route</dt>
+<dd>String: encoded polyline of the route</dd>
+<dt>color</dt>
+<dd>String: hex color to color the route line & stop markers</dd>
+<dt>website</dt>
+<dd>String: route's website</dd>
+<dt>vehicleName</dt>
+<dd>String: name of the vehicle</dd>
+<dt>stops</dt>
+<dd>Array of objects of
+    <dl>
+    <dt>name</dt>
+    <dd>String: stop's name</dd>
+    <dt>coordinate</dt>
+    <dd><dl>
+        <dt>latitude</dt>
+        <dd>Number: Building's latitude</dd>
+        <dt>longitude</dt>
+        <dd>Number: Building's longitude.</dd>
+    </dl></dd>
+    <dt>vehicleStopsUntil</dt>
+    <dd>Number: number of stops that the vehicle will stop at before it gets to this stop.</dd>
+    <dt>distFromVehicle</dt>
+    <dd>Number: number of miles that the vehicle is from the stop, assuming it follows the route.</dd>
+    <dt>updated</dt>
+    <dd>Date: the last time that information on vehicle distance and stopsUntil was calculated.</dd>
+    </dl>
+</dd>
+</dl>
 
 ### BusStopMarker
 
