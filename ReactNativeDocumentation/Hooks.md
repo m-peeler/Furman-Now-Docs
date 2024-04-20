@@ -12,7 +12,7 @@ has_children: false
 {:toc}
 ---
 # Hooks
-Furman Now! uses a number of custom hooks, extracted into this function so that they can be reused if necessary. 
+Furman Now! uses a number of custom hooks, extracted into functions so that they can be reused if necessary. 
 
 ## useDataLoadFetchCache
 
