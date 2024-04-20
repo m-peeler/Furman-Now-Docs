@@ -46,11 +46,14 @@ One way of using some of this data - both bike racks and benches could potential
 
 This could make for some sort of exercise game, and there could be some sort of leaderboard if we wanted. In addition to making sure the random selection of benches or bike racks was normalized for how many there are nearby, we would probably also want to make sure that no two successive points are both close to a parking lot so that people can simply drive between the points to cheat the system. Points should probably be generated server-side, and the route could change every day with daily leaderboards for the day's route in each of the three styles (walking, running, biking) as well as cumulative points for history of how well you have done. 
 
+## Dining Menu Details & Allergy Info
+Currently, dining entries do not include details (such as variations in food within stir fry at the Mongolian grill), nor do they have information about vegitarian/gluten free/shell fish/etc status. Including this information would help make the `Dining` screen a more total replacement of the website.
+
 ## Campus Directory
 Contacts currently only has a limited number of contacts. It could be directed by writing a web scraper that goes through the [campus directory][Directory] and pulls the contact information for all staff members, which are displayed on a searchable page either within or in addition to `Contacts`. 
 
 ## Major Information
-A list of all majors/minors on campus with links to their requirements and their faculty could be beneficial to students. Faculty have mentioned in the past struggling to get to their own department's major maps. 
+A list of all majors/minors on campus with links to their requirements and their faculty could be beneficial to students. Faculty have mentioned in the past struggling to get to their own department's major maps.
 
 ## Athletics Rosters
 Including a link to the sport's roster could be beneficial, and has been requested. The link to this would be provided by the server, and could be added context menu option when an `AthleticsButton` is held down. It could additionally be the site opened by clicking on the button before a game recap link exists. 
