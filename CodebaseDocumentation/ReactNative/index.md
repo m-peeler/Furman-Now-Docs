@@ -27,12 +27,30 @@ The [Shopify FlashList] is used as a more performant alternative to `react-nativ
 
 [react-navigation] is used to move between screens, as well as to share themes throughout the app using the `useTheme` hook.
 
+Remaining dependencies can be found in the `packages.json` file in the root directory of the Furman Now! React Native codebase. 
+
+## Dev Tools
+Furman Now! uses Node.js, and thus `npm` is the main package manager.
+
+The [Expo CLI] is primarily used for installing packages, as well as running the development server. This is effectively a way of calling `npx [package] --save`, in addition to several other housekeeping techniques. 
+
+[EAS], the Expo Application Services, is used for the over-the-air updates and remote building mentioned above. It can also handle submission to the App Store and Play Store, so long as the account information stored in the `eas.json` `submit` field are accurate and working. 
+
+The [eslint] extension to VS Code is used as a linter for the project, utilizing the AirBNB style guide and several plugins that allow the linter to work with React Native in addition to pure JavaScript.
+
+The [prop-types] package, explained in more detail in the [Intro to React Native] section, is a package for enforcing typing requirements on components. The AirBNB style guide requires usage for all components which recieve props. 
+
 
 
 ---
 [Expo]: https://expo.dev/
+[EAS]: https://expo.dev/eas
 [Shopify FlashList]: https://shopify.github.io/flash-list/
 [react-native-maps]: https://github.com/react-native-maps/react-native-maps
 [react-native-reanimated-carousel]: https://reanimated-carousel.dev/
 [react-native-reanimated]: https://docs.swmansion.com/react-native-reanimated/
 [react-native-context-menu-view]: https://github.com/mpiannucci/react-native-context-menu-view
+[Expo CLI]: https://docs.expo.dev/more/expo-cli/
+[eslint]: https://eslint.org/
+[prop-types]: https://www.npmjs.com/package/prop-types
+[Intro to React Native]: https://m-peeler.github.io/FurmanNowDocs/ReactNative/Components.html
