@@ -158,7 +158,10 @@ When navigating to `Map`, using the `navigate` method of `navigator`, including 
 A `mapRef` from the `useRef` hook is attached to the map to allow movement to a specific location.
 
 ## Parking
+An in-development screen which will show the various parking zones on campus and which color of parking pass is permitted to park there.
 
 ## Safety
+Safety resources are accessed using `useHealthSafety` and displayed as a list of `ContactContentButton`s. 
 
 ## Transit
+Transit vehicle locations, stop locations, and transit routes are accessed using `useTransitLocation`, `useTransitStops`, and `useTransitNames`, respectively. Transit information is displayed on a `FUNowMapView`. Clicking on a route will display an overlay with information about the route, incluidng time of operation and a link to the website. Clicking on stop markers will similarly display information about the stop, including the estimated time that a vehicle will arrive. 

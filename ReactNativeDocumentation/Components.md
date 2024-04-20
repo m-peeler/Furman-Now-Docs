@@ -370,15 +370,28 @@ Marker to show transit vehicles' current location and directional heading.
 <dt>eta</dt>
 <dd>String: message indicated the estimated time of arrival.</dd>
 <dt>color</dt>
-<dd>String: hex color to color the route line & stop markers</dd>
+<dd>String: hex color to color the stop marker</dd>
 <dt>website</dt>
 <dd>String: route's website</dd>
 <dt>vehicleName</dt>
 <dd>String: name of the vehicle</dd>
 </dl>
 
-### ModifiedPolyline
+Places a marker at the location provided. When clicked, shows a callout with the estimated time of arrival and a button to the route's website.
 
+### ModifiedPolyline
+<dl>
+<dt>encodedCoordinates</dt>
+<dd>String: encoding of polyline route's coordinates</dd>
+<dt>strokeWidth</dt>
+<dd>Number: width of composite polyline</dd>
+<dt>strokeColor</dt>
+<dd>String: central color of polyline</dd>
+<dt>onPress</dt>
+<dd>Function: called with no arguments when polyline is pressed</dd>
+</dl>
+
+Creates a double-colored polyline following the coordinates of `encodedCoordinates`, with a white polyline of width `strokeWidth` under a polyline of the color `strokeColor` with a width of 5 less. When the polyline is pressed on, `onPress` is called.
 
 ## AthleticsButton
 
