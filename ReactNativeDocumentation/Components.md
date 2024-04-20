@@ -13,6 +13,23 @@ has_children: false
 ---
 # Components
 ## Dates Components
+### DateButton
+*Props:*
+<dl>
+<dt>event</dt>
+<dd>
+    <dl>
+    <dt>timeRange</dt>
+    <dd>HourRange: time the event is occuring</dd>
+    <dt>date</dt>
+    <dd>Date: date of the event</dd>
+    <dt>title</dt>
+    <dd>String: title of the event</dd>
+    <dt>term</dt>
+    <dd>String: which term of the school year the event is during</dd>
+    </dl>
+</dd>
+</dl>
 
 ## Map Components
 

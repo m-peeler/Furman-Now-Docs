@@ -94,9 +94,56 @@ Abstract method to insert the object inheriting from `Insertable` into the `tabl
 <dd>tuple: a tuple consisting first the str statement, and the second of a tuple of all arguments to insert into the statement</dd>
 </dl>
 
-
+Formulates a selection statement following the condititons. 
 
 ## Clearable
+### _formulateClear
+*Attributes:*
+<dl>
+<dt>table</dt>
+<dd>str: name of the table being selected from</dd>
+<dt>conds</dt>
+<dd>A list of conditions, which can be provided in one of three formats:<br/>
+    1. [a, b] where the statement will be "a = b OR"<br/>
+    2. [a, b, c] where b is an operateor and the statement will be "a b c OR" <br/>
+    3. [a, b, c, d]  where d is "AND" or "OR" and the query will be "a b c d"
+</dd>
+</dl>
 
+*Returns:*
+<dl>
+<dt>clear</dt>
+<dd>tuple: a tuple consisting first the str statement, and the second of a tuple of all arguments to insert into the statement</dd>
+</dl>
 
+### _clearHelper
+*Attributes:*
+<dl>
+<dt>table</dt>
+<dd>str: name of the table being inserted into</dd>
+<dt>connection</dt>
+<dd>pymysql.connection</dd>
+<dt>conds</dt>
+<dd>A list of conditions, which can be provided in one of three formats:<br/>
+    1. [a, b] where the statement will be "a = b OR"<br/>
+    2. [a, b, c] where b is an operateor and the statement will be "a b c OR" <br/>
+    3. [a, b, c, d]  where d is "AND" or "OR" and the query will be "a b c d"
+</dd>
+<dt>commit</dt>
+<dd>bool: if query should be immediately committed.</dd>
+</dl>
 
+### clearFrom
+*Attributes:*
+<dl>
+<dt>self</dt>
+<dd>Clearable: an object which extends Clearable and implements the method</dd>
+<dt>table</dt>
+<dd>str: name of the table being inserted into</dd>
+<dt>connection</dt>
+<dd>pymysql.connection</dd>
+<dt>commit</dt>
+<dd>bool: if query should be immediately committed.</dd>
+</dl>
+
+Abstract method to clear the object from the `table` using the provided `connection`.  
