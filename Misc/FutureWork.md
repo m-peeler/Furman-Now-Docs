@@ -2,7 +2,6 @@
 layout: default
 title: Future Work
 nav_order: 6
-has_children: true
 ---
 ## Table of contents
 {: .no_toc .text-delta }
