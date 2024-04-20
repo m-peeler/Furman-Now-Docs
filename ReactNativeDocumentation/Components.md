@@ -31,6 +31,30 @@ has_children: false
 </dd>
 </dl>
 
+Button which displays information about a date event. If the button is held down, users can save it to calendar or share it. 
+
+### EventButton
+*Props:*
+<dl>
+<dt>title</dt>
+<dd>String: title of the event</dd>
+<dt>description</dt>
+<dd>String: description of the event</dt>
+<dt>start</dt>
+<dd>Date: start time of the event</dd>
+<dt>end</dt>
+<dd>Date: end time of the event</dd>
+<dt>date</dt>
+<dd>Date: date of the event</dd>
+<dt>organize</dt>
+<dd>String: organizer of the event</dd>
+<dt>location</dt>
+<dd>String: location of the event</dd>
+</dd>
+</dl>
+
+Button which displays information about a date event. If the button is held down, users can save it to calendar or share it. 
+
 ## Map Components
 
 ## News Components

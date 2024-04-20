@@ -80,7 +80,7 @@ Contacts are sorted first by priority level (highest first), and then alphebetic
 The `emergencyThreshold` variable is used to set which levels of priority should be given the `emergencyStyle`, which primarily includes a red colored background.
 
 ## Dates
-Dates includes a `react-native-reanimed-carousel` of four types of important dates - CLPs, on-campus events, undergraduate academic calendar, and graduate calendar (the first two with the `useCampusEvents` hook, the later two using the `useImportantDates` hook). The "events" include a description, which is fully displayed if the button is clicked on; the "dates" do not include descriptions. If any additional types of dates are desired to be added, it can be done serverside by adding them to the CLP or ImportantEvents tables with a unique eventType.
+Dates includes a `react-native-reanimed-carousel` of four types of important dates - CLPs, on-campus events, undergraduate academic calendar, and graduate calendar (the first two with the `useCampusEvents` hook, the later two using the `useImportantDates` hook). The "events" include a description, which is fully displayed if the button is clicked on, as well as an organizer and a location; the "dates" do not include these three items.
 
 The carousel view can sometimes have strange visual effects when loading multiple screens in, so only the first date screen is initially loaded, with later screens being added to their carousel 450 milliseconds later. 
 
@@ -108,7 +108,7 @@ Building opening hours are accessed using `useBuildingHours`. Hours are shown in
 The `engaged` button also shows two other buttons: one which directs to the building's website, and the other which directs to its location on the `Map` screen.
 
 ### HoursButton
-**Arguments:**
+*Props:*
 <dl>
 <dt>item</dt>
 <dd>Array: Key-Value pair, where key is the building name and value contains  information about the building; an entry directly from the <tt>data</tt> variable of <tt>useBuildingHours</tt>.</dd>
@@ -129,7 +129,7 @@ Expandable button which shows information for the hours a building is open, usin
 When engaged, two buttons are also visible which allow navigation to the building's website or their location on the `Map` screen. 
 
 ### HoursTitleBar
-**Arguments:**
+*Props:*
 <dl>
 <dt>styles</dt>
 <dd>Object: An object containing the styles which should be applied to various parts of the HoursTitleBar. The <tt>title</tt> style is applied to the building's name, the <tt>subtitle</tt> style to the building's nickname, and the <tt>openIndicator</tt> function, which is provided with the current status of the building ("OPEN", "CLOSED", or "CLOSES SOON") and returns an object with the style for the status indicator circle.
