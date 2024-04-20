@@ -132,11 +132,11 @@ When engaged, two buttons are also visible which allow navigation to the buildin
 *Props:*
 <dl>
 <dt>styles</dt>
-<dd>Object: An object containing the styles which should be applied to various parts of the HoursTitleBar. The <tt>title</tt> style is applied to the building's name, the <tt>subtitle</tt> style to the building's nickname, and the <tt>openIndicator</tt> function, which is provided with the current status of the building ("OPEN", "CLOSED", or "CLOSES SOON") and returns an object with the style for the status indicator circle.
+<dd>Object: An object containing the styles which should be applied to various parts of the HoursTitleBar. The <tt>title</tt> style is applied to the building's name, the <tt>subtitle</tt> style to the building's nickname, and the <tt>openIndicator</tt> function, which is provided with the current status of the building ("OPEN", "CLOSED", or "CLOSES SOON") and returns an object with the style for the status indicator circle.</dd>
 <dt>name</dt>
 <dd>String: The building's full name.</dd>
 <dt>nickname</dt>
-<dd>String: Shortened and common nickname for the building, displayed below the name if provided.</dt>
+<dd>String: Shortened and common nickname for the building, displayed below the name if provided.</dd>
 <dt>information</dt>
 <dd>Object: Contains a <tt>schedule</tt> key whose value is a <tt>Schedule</tt> for the building.</dd>
 </dl>

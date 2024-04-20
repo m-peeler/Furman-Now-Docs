@@ -357,6 +357,25 @@ Marker to show transit vehicles' current location and directional heading.
 </dl>
 
 ### BusStopMarker
+<dl>
+<dt>title</dt>
+<dd>String: stop's name</dd>
+<dt>coordinate</dt>
+<dd><dl>
+    <dt>latitude</dt>
+    <dd>Number: Building's latitude</dd>
+    <dt>longitude</dt>
+    <dd>Number: Building's longitude.</dd>
+</dl></dd>
+<dt>eta</dt>
+<dd>String: message indicated the estimated time of arrival.</dd>
+<dt>color</dt>
+<dd>String: hex color to color the route line & stop markers</dd>
+<dt>website</dt>
+<dd>String: route's website</dd>
+<dt>vehicleName</dt>
+<dd>String: name of the vehicle</dd>
+</dl>
 
 ### ModifiedPolyline
 
