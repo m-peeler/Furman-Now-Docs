@@ -106,6 +106,7 @@ Formats a phone number into the desired formatting for better display.
 </dd>
 <dt>company</dt>
 <dd>String: contact's company; default value is 'Furman University'</dd>
+</dl>
 
 A class that stores a person's contact information, including their `name`, either an `email` address or a numeric phone `number`, and optionally a `company` they work for. 
 
