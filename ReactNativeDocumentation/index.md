@@ -49,6 +49,7 @@ The [prop-types] package, explained in more detail in the [Intro to React Native
 [react-native-reanimated-carousel]: https://reanimated-carousel.dev/
 [react-native-reanimated]: https://docs.swmansion.com/react-native-reanimated/
 [react-native-context-menu-view]: https://github.com/mpiannucci/react-native-context-menu-view
+[react-navigation]: https://reactnavigation.org/docs/getting-started/
 [Expo CLI]: https://docs.expo.dev/more/expo-cli/
 [eslint]: https://eslint.org/
 [prop-types]: https://www.npmjs.com/package/prop-types
