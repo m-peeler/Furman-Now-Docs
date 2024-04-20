@@ -117,7 +117,7 @@ The `engaged` button also shows two other buttons: one which directs to the buil
 <dt>onPress</dt>
 <dd>Function: Takes as input no arguments, and called when <tt>HoursButton</tt> is pressed.</dd>
 <dt>styles</dt>
-<dd>Function: A function which takes as input a boolean state indicating if HoursButton is currently pressed. It returns an object with four style entries: <tt>locationText</tt>, which will be provided to the <tt>HoursTitleBar</tt> as styling; <tt>button</tt>, which is styling for the background of the button, <tt>dayText</tt>, which is styling for the text on the left of the button that shows which day of the week hours pertain to; and <tt>hoursText</tt>, which is applied to the text on the right which shows which hours the building is open each day. If the boolean provided is true, the button is being pressed, and the styles should change accordingly.  
+<dd>Function: A function which takes as input a boolean state indicating if HoursButton is currently pressed. It returns an object with four style entries: <tt>locationText</tt>, which will be provided to the <tt>HoursTitleBar</tt> as styling; <tt>button</tt>, which is styling for the background of the button, <tt>dayText</tt>, which is styling for the text on the left of the button that shows which day of the week hours pertain to; and <tt>hoursText</tt>, which is applied to the text on the right which shows which hours the building is open each day. If the boolean provided is true, the button is being pressed, and the styles should change accordingly. </dd>
 <dt>buttonEngaged</dt>
 <dd>Integer: Index of the button currently engaged, -1 if no button is.</dd>
 <dt>onNavigate</dt>
