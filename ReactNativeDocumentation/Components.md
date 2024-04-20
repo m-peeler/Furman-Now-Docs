@@ -442,7 +442,7 @@ Makes a heading for the list of athletics event on the `Athletics` screen.
 <dt>under</dt>
 <dd>Node: React node that will be displayed in the space lower on the screen beneath the button<dd>
 <dt>styles</dt>
-<dd>Object or Function: Contains various optional styling components for different parts of the button. If it is a function, it should take as input a boolean representing whether or not the button is being pressed, and return an object matching the same specifications.
+<dd>Object or Function: Contains various optional styling components for different parts of the button. If it is a function, it should take as input a boolean representing whether or not the button is being pressed, and return an object matching the same specifications.</dd>
     <dl>
     <dt>cells</dt>
     <dd>Object: styles that are applied to the whole cell of the button; this is the largest possible division of the button and encapsulates the <tt>under</tt> elements as well.</dd>
@@ -545,7 +545,7 @@ A stylized, reusable search bar component that is placed at the top of a screen.
     <dt>label</dt>
     <dd>Object: styles for the text label of the button.</dd>
     <dt>buttonStyles</dt>
-    <dd>Object or Function: styles passed to the <tt>Button</tt> component.</dt>
+    <dd>Object or Function: styles passed to the <tt>Button</tt> component.</dd>
     </dl>
 </dd>
 <dt>onPress</dt>
