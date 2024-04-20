@@ -1,0 +1,21 @@
+---
+layout: default
+title: SQL Classes
+nav_order: 1
+parent: Python Documentation 
+has_children: false
+---
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+---
+# SQL Classes
+The SQL classes are a set of abstract classes which can be inherited from to provide helper methods for SQL queries. 
+
+## Queriable
+
+## Deletable 
+
+## Insertable
