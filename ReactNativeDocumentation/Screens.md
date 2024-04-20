@@ -121,7 +121,7 @@ The `engaged` button also shows two other buttons: one which directs to the buil
 <dt>buttonEngaged</dt>
 <dd>Integer: Index of the button currently engaged, -1 if no button is.</dd>
 <dt>onNavigate</dt>
-<dd>Function: Function called with no parameters when user clicks on a button to show the Map view.</dt>
+<dd>Function: Function called with no parameters when user clicks on a button to show the Map view.</dd>
 </dl>
 
 Expandable button which shows information for the hours a building is open, using the `<Schedule>` object of the building's `index[1].schedule`. If the `HoursButton` is touched, it sets the `pressed` variable to true (which reverts when touch is ended), and if pressed, it becomes `engaged`, showing the hours for the whole week (where it was previously limited to the current day)

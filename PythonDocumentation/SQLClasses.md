@@ -38,6 +38,12 @@ Queriable.query(connection, ("FROM %s SELECT name=%s", ('table', 'Victor')))
 <dd>list: a list of key-value pairs</dd>
 </dl>
 
+*Returns:*
+<dl>
+<dt>insert</dt>
+<dd>tuple: a tuple consisting first the str statement, and the second of a tuple of all arguments to insert into the statement</dd>
+</dl>
+
 Creates a tuple with an insert statement and a tuple of values to insert an entry with the attributes of `attrs` into `table`, in the style required by `Queriable.query`.
 
 ### _insertIntoHelper
@@ -67,6 +73,8 @@ Creates a tuple with an insert statement and a tuple of values to insert an entr
 Abstract method to insert the object inheriting from `Insertable` into the `table` using the provided `connection`.  
 
 ## Selector
+### _formulateSelect
+*Attributes:*
 <dl>
 <dt>table</dt>
 <dd>str: name of the table being selected from</dd>
@@ -79,6 +87,14 @@ Abstract method to insert the object inheriting from `Insertable` into the `tabl
     3. [a, b, c, d]  where d is "AND" or "OR" and the query will be "a b c d"
 </dd>
 </dl>
+
+*Returns:*
+<dl>
+<dt>select</dt>
+<dd>tuple: a tuple consisting first the str statement, and the second of a tuple of all arguments to insert into the statement</dd>
+</dl>
+
+
 
 ## Clearable
 
