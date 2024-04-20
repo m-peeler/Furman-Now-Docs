@@ -357,6 +357,7 @@ Marker to show transit vehicles' current location and directional heading.
 </dl>
 
 ### BusStopMarker
+*Props:*
 <dl>
 <dt>title</dt>
 <dd>String: stop's name</dd>
@@ -380,6 +381,7 @@ Marker to show transit vehicles' current location and directional heading.
 Places a marker at the location provided. When clicked, shows a callout with the estimated time of arrival and a button to the route's website.
 
 ### ModifiedPolyline
+*Props:*
 <dl>
 <dt>encodedCoordinates</dt>
 <dd>String: encoding of polyline route's coordinates</dd>
@@ -395,17 +397,142 @@ Creates a double-colored polyline following the coordinates of `encodedCoordinat
 
 ## AthleticsButton
 
+### AthleticsButton
+*Props:*
+<dl>
+<dt>event</dt>
+<dd>
+    <dl>
+    <dt>location_indication</dt>
+    <dd>String: "H" or "A" indicating if a game is "Home" or "Away."</dd>
+    <dt>eventdate</dt>
+    <dd>Date: Date and time of event.</dd>
+    <dt>noplayText</dt>
+    <dd>String: message indicating if the game has been cancelled.</dd>
+    <dt>resultStatus</dt>
+    <dd>String: "W", "L" or "N" indicating who won.</dd>
+    <dt>sportTitle</dt>
+    <dd>String: name of the sport being played.</dd>
+    <dt>url</dt>
+    <dd>String: optional link to a game recap.</dd>
+    </dl>
+</dd>
+</dl>
+
+A button that displays information on an athletics game. Holding down on the button shows a context menu that allows saving to calendar or sharing information on the event. If a recap link is present, clicking on the button will open the link. 
+
+### AthleticsHeading
+*Props:*
+<dl>
+<dt>heading</dt>
+<dd>String: name on the heading</dd>
+<dt>date</dt>
+<dd>Date: optional date included on the heading</dd>
+</dl>
+
+Makes a heading for the list of athletics event on the `Athletics` screen.
+
 ## Button
+*Props:*
+<dl>
+<dt>behind</dt>
+<dd>Node: React node that will be displayed as the back of the button.</dd>
+<dt>front</dt>
+<dd>Node or Function: React node that will be displayed as the front of the button. If a function, frontResponsive should be true, and front will be called with the <tt>front</tt> styling of <tt>styles</tt> as its argument.</dd>
+<dt>under</dt>
+<dd>Node: React node that will be displayed in the space lower on the screen beneath the button<dd>
+<dt>styles</dt>
+<dd>Object or Function: Contains various optional styling components for different parts of the button. If it is a function, it should take as input a boolean representing whether or not the button is being pressed, and return an object matching the same specifications.
+    <dl>
+    <dt>cells</dt>
+    <dd>Object: styles that are applied to the whole cell of the button; this is the largest possible division of the button and encapsulates the <tt>under</tt> elements as well.</dd>
+    <dt>button</dt>
+    <dd>Object: styles that are applied to the view containing <tt>front</tt> and <tt>behind</tt> but not <tt>under</tt>.</dd>
+    <dt>front</dt>
+    <dd>Object: styling provided as argument to the <tt>front</tt> element if <tt>frontResponsive</tt> is true.</dd>
+    </dl>
+</dd>
+<dt>frontResponsive</dt>
+<dd>Boolean: indicates whether or not the front's styling is a function that takes in a boolean indicating if the button is pressed and returns a styling object. This allows the front to be response to presses if they are clicked on</dd>
+<dt>...rest</dt>
+<dd>All remaining arguments are provided to the component where the <tt>button</tt> styling are applied.</dd>
+</dl>
+
+A basic button component.
 
 ## ButtonList
+*Props:*
+<dl>
+<dt>data</dt>
+<dd>Array: List of data in the list</dd>
+<dt>style</dt>
+<dd>Object: style properties applied to the bounding container of the FlashList</dd>
+<dt>...rest</dt>
+<dd>All remaining arguments pass to the FlashList</dd>
+</dl>
 
-## ContactContentButtonn
+A simple wrapper on `FlashList` that uses a standardized height. 
+
+## ContactContentButton
+*Props:*
+<dl>
+<dt>name</dt>
+<dd>String: display name on the button</dd>
+<dt>content</dt>
+<dd>String or Number: the content being contacted with the button; can be either an email address (string), a url (string), or a phone number (number).</dd>
+<dt>priority</dt>
+<dd>Boolean: indicates if the button is a priority button with a different color scheme</dd>
+<dt>type</dt>
+<dd>String: either 'email', 'phone', or 'url' indicating which type the <tt>content</tt> is.</dd>
+</dl>
+
+A button that, when clicked, opens a link, launches an email, or gives the option to call. Additionally, holding on the button allows the content to be shared, and for email and phone number, to be saved to contacts. 
 
 ## CreditsTab
+*Props:*
+<dl>
+<dt>onPress</dt>
+<dd>Function: called with no arguments when the user clicks on the dark-tinted left side of the screen while the CreditsTab is open</dd>
+</dl>
+
+Tab displaying various credit information. Version information, which is present here to help with debugging and in assisting with user issues, must be manually updated.
 
 ## DHMenuCard
+*Props:*
+<dl>
+<dt>meal</dt>
+<dd>String: name of the meal on the card</dd>
+<dt>stationMenus</dt>
+<dd>Array of key-value pairs, where the key is a station and the value is a list of objects of menu items where <tt>itemName</tt> is the name of a food at the station.</dd>
+<dt>accessibilityProps</dt>
+<dd><dl>
+    <dt>accessible</dt>
+    <dd>Boolean: indicates if the title of the card is accessible</dd>
+    <dt>accessibilityRole</dt>
+    <dd>String: If provided, should be 'adjustable', which means a swipe up or down on the object can increment or decrament and move to the next one.</dd>
+    <dt>accessibilityActions</dt>
+    <dd>Array: array of objects with one key-value; should be {name: "increment"} and {name: "decrement"}</dd>
+    <dt>onAccessibilityAction</dt>
+    <dd>Function: takes as input the names of the provided accessibilityAction invoked and causes change based on it; an 'increment' should move the carriage one card to the right and a 'decrement' one card to the left.</dd>
+</dl></dd>
+<dt>onRotateButtons</dt>
+<dd>Function: called with either a 1 (right arrow) or a -1 (left arrow) if either of the arrow navigation buttons are pressed, causing the carraige to rotate in the pressed direction</dd>
+<dt>isFirst</dt>
+<dd>Boolean: set true for the first card in a carraige; if true, the left arrow will be hidden</dd>
+<dt>isLast</dt>
+<dd>Boolean: set true for the last card in a carraige; if true, the right arrow will be hidden</dd>
+</dl>
 
 ## FurmanNowSearchBar
+*Props:*
+<dl>
+<dt>value</dt>
+<dd>String (state): state which holds the text input</dd>
+<dt>onChangeText</dt>
+<dd>Function: Callback that is called when the text input's text changes, with the changed text passed as an argument. Should include setting the <tt>value</tt> state equal to the changed text.</dd>
+<dt>placeholder</dt>
+<dd>String: text displayed before any input is added.</dd>
+</dl>
 
 ## HomeScreenNavButton
 
