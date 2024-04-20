@@ -1,8 +1,7 @@
 ---
 layout: default
 title: Python Documentation
-nav_order: 2
-parent: Codebase Documentation
+nav_order: 5
 has_children: true
 ---
 ## Table of contents

@@ -1,8 +1,7 @@
 ---
 layout: default
 title: React Native Documentation
-nav_order: 1
-parent: Codebase Documentation
+nav_order: 4
 has_children: true
 ---
 ## Table of contents
