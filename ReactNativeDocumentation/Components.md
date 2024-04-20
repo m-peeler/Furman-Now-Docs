@@ -440,7 +440,7 @@ Makes a heading for the list of athletics event on the `Athletics` screen.
 <dt>front</dt>
 <dd>Node or Function: React node that will be displayed as the front of the button. If a function, frontResponsive should be true, and front will be called with the <tt>front</tt> styling of <tt>styles</tt> as its argument.</dd>
 <dt>under</dt>
-<dd>Node: React node that will be displayed in the space lower on the screen beneath the button<dd>
+<dd>Node: React node that will be displayed in the space lower on the screen beneath the button</dd>
 <dt>styles</dt>
 <dd>Object or Function: Contains various optional styling components for different parts of the button. If it is a function, it should take as input a boolean representing whether or not the button is being pressed, and return an object matching the same specifications.
     <dl>
