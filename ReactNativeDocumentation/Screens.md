@@ -113,7 +113,7 @@ The `engaged` button also shows two other buttons: one which directs to the buil
 <dt>item</dt>
 <dd>Array: Key-Value pair, where key is the building name and value contains  information about the building; an entry directly from the <tt>data</tt> variable of <tt>useBuildingHours</tt>.</dd>
 <dt>index</dt>
-<dd>Integer: Index of the hour on the list; used to determine if the button is currently engaged.
+<dd>Integer: Index of the hour on the list; used to determine if the button is currently engaged.</dd>
 <dt>onPress</dt>
 <dd>Function: Takes as input no arguments, and called when <tt>HoursButton</tt> is pressed.</dd>
 <dt>styles</dt>
