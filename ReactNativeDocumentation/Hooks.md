@@ -63,7 +63,7 @@ Provides a list of either string headings or objects representing recent and upc
 <dt>data</dt>
 <dd>Array (state): contains an array of arrays with information about campus buildings with hours and their hours of operation. Each entry in the array is of the form <tt>[buildingName, {schedule, lastUpdated, ...buildingData[key]}}</tt></dd>
 <dt>dataExists</dt>
-<dd>Boolean (state): indicates whether or not information has been successfully loaded/fetched and joined together, meaning that the <tt>data</tt> state is defined.
+<dd>Boolean (state): indicates whether or not information has been successfully loaded/fetched and joined together, meaning that the <tt>data</tt> state is defined.</dd>
 </dl>
 
 Accesses both the list of buildings on campus, and the list of hours for buildings with hours. Hours are partitioned based on building, then each partition is combined into a `schedule` object, which is then added to the object in each entry's list in addition to the building's name. Other fields inside the entry are proided directly from the server fetch.
