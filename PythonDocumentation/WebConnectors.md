@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Scrapers
+title: Web Connectors
 nav_order: 2
 parent: Python Documentation 
 has_children: false
@@ -11,5 +11,11 @@ has_children: false
 1. TOC
 {:toc}
 ---
-# Scrapers
-Most scrapers that I have had the chance to rewrite inherit from the `Scraper` abstract base class. 
+# Web Connectors
+## Scraper
+
+## formConnection
+
+## youTubePullLatest
+
+## getLibraryAPIToken
