@@ -119,7 +119,6 @@ Display card for ImportantDates buttons; angled arrow buttons at the top can be 
 <dd>Array or React node: An array of React Native nodes, or a single node, which will be displayed as children of the MapView.</dd>
 <dt>zoom</dt>
 <dd>Number: the desired magnification level of the map from its base position.</dd>
-<dt>accessibilityProps</dt>
 <dt>onPress</dt>
 <dd>Function: called when the map is pressed on.</dd>
 <dt>onRegionChange</dt>
@@ -147,7 +146,7 @@ Since the `ref` from the `FUNowMapView` is necessary for moving the map, as well
     <dd>Number: Building's longitude.</dd>
 </dl></dd>
 <dt>polyline</dt>
-<dd>String: encoded polyline of the building's perimeter shape, if the building's shape on the map is preferable to a pin.
+<dd>String: encoded polyline of the building's perimeter shape, if the building's shape on the map is preferable to a pin.</dd>
 <dt>locationText</dt>
 <dd>String: summary of building's location</dd>
 <dt>category</dt>
