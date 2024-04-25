@@ -11,7 +11,11 @@ has_children: false
 1. TOC
 {:toc}
 ---
-# Root Directory Files
+# Root Directory & Program Structure
+The codebase is organized primarily through the `App.jsx` file, whose `App` component is the root of the app. A basic tree of all custom component and hook references would look like the following:
+
+![](../assets/Furman Now Custom Component Tree.svg)
+
 ## App.jsx
 The actual Furman Now! app is run out of the `App.jsx` file in the project's root directory. `App.jsx` is used for all pre-launch loading, such as the use of `expo-font` to load in fonts and `expo-splash-screen` to hide the screen until loading is complete. This also where the color scheme is set, using the `useColorScheme` hook to determine if a device is in light or dark mode and setting the scheme based on that.
 

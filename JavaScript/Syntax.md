@@ -172,4 +172,7 @@ To create a string which has dynamic elements, we can use template strings. Thes
 const includeAll = true;
 const vals = ['Hello', 'World', 'Folks'];
 const str = `${vals[0]} ${includeAll ? vals[1] : vals[2]}`;
+
+console.log(str);
+// 'Hello World'
 ```
