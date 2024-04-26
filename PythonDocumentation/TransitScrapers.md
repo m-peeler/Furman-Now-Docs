@@ -268,6 +268,7 @@ Saves the time so as to know when the scraping last occurred.
 
 ## ShuttleScraper
 **Inherits from `Scraper`**
+
 Scrapes the current locations for the Furman campus shuttle.
 
 ### _parseVehicle
