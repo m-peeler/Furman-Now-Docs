@@ -56,7 +56,7 @@ Abstract base class that web scrapers inherit from.
 </dl>
 
 ### _pull
-**Abstract Method**
+**Abstract Method** \\
 *Returns:*
 <dl>
 <dt>pulled</dt>

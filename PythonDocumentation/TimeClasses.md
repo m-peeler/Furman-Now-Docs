@@ -189,13 +189,6 @@ Initializes a default schedule once the `dataclass` values are all initialized.
 <dd>boolean: true if no TimeRanges in the Schedule are Failed.</dd>
 </dl>
 
-### noFails
-*Returns:*
-<dl>
-<dt>noFails</dt>
-<dd>boolean: true if no TimeRanges in the Schedule are Failed.</dd>
-</dl>
-
 ### addDayRangeTime
 *Arguments:*
 <dl>
