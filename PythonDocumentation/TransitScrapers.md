@@ -269,3 +269,40 @@ Saves the time so as to know when the scraping last occurred.
 ## ShuttleScraper
 **Inherits from `Scraper`**
 Scrapes the current locations for the Furman campus shuttle.
+
+### _parseVehicle
+*Arguments:*
+<dl>
+<dt>jsonDct</dt>
+<dd>dict: parsed json representation of the shuttle</dd>
+</dl>
+
+*Returns:*
+<dl>
+<dt>vehic</dt>
+<dd>Vehicle: Vehicle constructed from information in json dictionary</dd>
+</dl>
+
+### _pull
+*Returns:*
+<dl>
+<dt>pulled</dt>
+<dd>list: list of pulled campus shuttle Vehicles</dd>
+</dl>
+
+## BusScraper
+**Inherits from `Scraper`**
+Scrapes the current locations for the Greenlink bus whose ID number is provided as `busID` on initializaiton.
+
+*Arguments:*
+<dl>
+<dt>busID</dt>
+<dd>int: id of desired bus in Greenlink system</dd>
+<dl>
+
+### _pull
+*Returns:*
+<dl>
+<dt>pulled</dt>
+<dd>list: list of pulled campus shuttle Vehicles whose busID match the value privided in initialization.</dd>
+</dl>
