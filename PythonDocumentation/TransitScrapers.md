@@ -299,7 +299,7 @@ Scrapes the current locations for the Greenlink bus whose ID number is provided 
 <dl>
 <dt>busID</dt>
 <dd>int: id of desired bus in Greenlink system</dd>
-<dl>
+</dl>
 
 ### _pull
 *Returns:*
