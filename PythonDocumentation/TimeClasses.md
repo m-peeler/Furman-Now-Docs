@@ -31,21 +31,21 @@ Represents a range of time using an `opening` and `closing` datetime; can also r
 <dd>datetime: closing time</dd>
 </dl>
 
-### __str__
+### \_\_str\_\_
 *Returns:*
 <dl>
 <dt>timeRangeString</dt>
 <dd>str: represents time range as a string</dd>
 </dl>
 
-### __repr__
+### \_\_repr\_\_
 *Returns:*
 <dl>
 <dt>timeRangeRepresentation</dt>
 <dd>str: string represent of the current object</dd>
 </dl>
 
-### __eq__
+### \_\_eq\_\_
 *Arguments:*
 <dl>
 <dt>othr</dt>
@@ -131,7 +131,7 @@ Represents a range of time using an `opening` and `closing` datetime; can also r
 
 Holds an open-closed schedule. Each schedule can store various "time periods" with different names, when different hours are applicable; the default period is "Regular Operation".
 
-### __post_init__
+### \_\_post_init\_\_
 Initializes a default schedule once the `dataclass` values are all initialized. 
 
 ### _emptyTimePeriod
@@ -155,14 +155,14 @@ Initializes a default schedule once the `dataclass` values are all initialized.
 <dd>str: representation of the timePeriod as a string</dd>
 </dl>
 
-### __repr__
+### \_\_repr\_\_
 *Returns:*
 <dl>
 <dt>stringRep</dt>
 <dd>str: representation of the Schedule as a string</dd>
 </dl>
 
-### __str__
+### \_\_str\_\_
 *Returns:*
 <dl>
 <dt>schedString</dt>
@@ -275,7 +275,7 @@ Using `connection`, finds the `Schedule`'s `buildingID` from the `buildingIDTabl
 
 Models an on-campus event.
 
-### __str__
+### \_\_str\_\_
 *Returns:*
 <dl>
 <dt>string</dt>
