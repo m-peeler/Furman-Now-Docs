@@ -13,6 +13,10 @@ nav_order: 6
 
 There are a number of new features for the app which have been brainstormed, or which we began to work on, but were not finished and can be future work.
 
+## Dining Index Issue
+**HIGH PRIORITY**
+The `Dining` page attempts to load the most relevant menu based on time of day (i.e. if it's noon, it will attempt to find the lunch menu to display). However, the current function that does this can cause crashes if there are fewer than 3 meals being served that day, since it was expected that the DH will always have 3 meals. This was a bad assumption: if the DH is closed, or serving only one or two meals a day, running this function can cause the screen to black out on the app. Fixing this issue should be a top priority.
+
 ## Parking
 A specific page which includes a `FUNowMapView` at the top with campus' parking zones demarcated on the top and all relevant links/resources for parking at campus below it. Relevant information would be largely moved from the `Links` page to here, and would include parking permit purchase portal, parking ticket appeal site, the parking department's contact information, accessibility maps, the form to request main circle access, temporary permit requests, and anything else related to parking.
 
@@ -64,7 +68,16 @@ Improving the way that the app is displayed on larger screens like iPads/tablets
 ## Dynamic Font Size
 Font size is currently the same regardless of device type, screen size, or how the device displays the font. Creating a method of making the font larger based on the screen size may be desirable so that iPads do not have tiny text. This could probably be done by making a function in the `styling` field in the theme which takes in a font size and calculates a 'relative size' based on the screen properties.
 
+## News
+### Time Issues
+Some of the scrapers do not correctly parse time zone information, leading to publication date information being saved in UTC when it should be in EST. This effectively makes the app believe the story was posted at some point in the future. This is handled by displaying that the story was "Posted Recently", which regularly is displayed for stories collected by those scrapers that have this issues, but this should be seen as a bug instead of an expected behavior. Correcting problematic news scrapers should be done at some point.
+
+### Library Blog
+The Furman Library [has a blog][Library Blog] (with an associated [RSS feed][https://blogs.furman.edu/library-news/feed/]) where they post various articles written by librarians. Miles Dame has requested that we add this to the News Feed, and I seen no reason to deny the request.
+
 ---
 [ArcGIS Online Project]: https://services1.arcgis.com/4pYHyjjOPNwIcnDB/arcgis/rest/services/Benches_On_Furman_University_Campus/FeatureServer
 [Campus Object Maps]: https://furman.maps.arcgis.com/apps/View/index.html?appid=822d3f23946a422fa198dcb933962927
 [Campus Directory]: https://www.furman.edu/people/staff/
+[Library Blog]: https://blogs.furman.edu/library-news/
+[Library RSS]: https://blogs.furman.edu/library-news/feed/
