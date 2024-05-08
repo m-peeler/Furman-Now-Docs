@@ -81,7 +81,7 @@ Font size is currently the same regardless of device type, screen size, or how t
 Some of the scrapers do not correctly parse time zone information, leading to publication date information being saved in UTC when it should be in EST. This effectively makes the app believe the story was posted at some point in the future. This is handled by displaying that the story was "Posted Recently", which regularly is displayed for stories collected by those scrapers that have this issues, but this should be seen as a bug instead of an expected behavior. Correcting problematic news scrapers should be done at some point.
 
 ### Library Blog
-The Furman Library [Library Blog][has a blog] (with an associated [RSS feed][Library RSS]) where they post various articles written by librarians. Miles Dame has requested that we add this to the News Feed, and I seen no reason to deny the request.
+The Furman Library [has a blog][Library Blog] (with an associated [RSS feed][Library RSS]) where they post various articles written by librarians. Miles Dame has requested that we add this to the News Feed, and I seen no reason to deny the request.
 
 ### Push Notifications for New Stories
 Allowing users to opt-in to relevant push notifications for specific sources could be useful. These should only come out some period of time after the story is posted so that we will make sure not to spam them with too many if a source posts in bulk. We could also programmatically generate some sort of "week in review" newsletter that is sent out
