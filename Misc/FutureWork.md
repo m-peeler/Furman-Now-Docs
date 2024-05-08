@@ -14,7 +14,8 @@ nav_order: 6
 There are a number of new features for the app which have been brainstormed, or which we began to work on, but were not finished and can be future work.
 
 ## Dining Index Issue
-**HIGH PRIORITY**
+**HIGH PRIORITY** 
+
 The `Dining` page attempts to load the most relevant menu based on time of day (i.e. if it's noon, it will attempt to find the lunch menu to display). However, the current function that does this can cause crashes if there are fewer than 3 meals being served that day, since it was expected that the DH will always have 3 meals. This was a bad assumption: if the DH is closed, or serving only one or two meals a day, running this function can cause the screen to black out on the app. Fixing this issue should be a top priority.
 
 ## Parking
@@ -50,11 +51,18 @@ One way of using some of this data - both bike racks and benches could potential
 
 This could make for some sort of exercise game, and there could be some sort of leaderboard if we wanted. In addition to making sure the random selection of benches or bike racks was normalized for how many there are nearby, we would probably also want to make sure that no two successive points are both close to a parking lot so that people can simply drive between the points to cheat the system. Points should probably be generated server-side, and the route could change every day with daily leaderboards for the day's route in each of the three styles (walking, running, biking) as well as cumulative points for history of how well you have done. 
 
+## Weather
+The weather scraper is able to get humidity information, but we don't currently store it in the database, and thus cannot display it in the app. This would potentially be a good feature to include. Further, in consistency with the mission of bringing Furman information together, it might make sense to draw information on current weather from the [Furman Weather Station] (this would probably require web scraping, though Miles Dame has potentially offered to write an API for the page). It may also be nice to make clicking on the weather widget in the app direct to this page so viewers can get a fuller image of the weather.
+
+## Hours
+### Belltowwer Bookstore
+The new bookstore opened after work on the app had largely concluded. Updating the scraper to pull information from the [Follett Website] would make sense, though it may be hard to parse when exactly the hours apply with the current design of the site. Contacting Follett to ask if they have an API may be worth the effort.
+
 ## Dining Menu Details & Allergy Info
 Currently, dining entries do not include details (such as variations in food within stir fry at the Mongolian grill), nor do they have information about vegitarian/gluten free/shell fish/etc status. Including this information would help make the `Dining` screen a more total replacement of the website.
 
 ## Campus Directory
-Contacts currently only has a limited number of contacts. It could be directed by writing a web scraper that goes through the [campus directory][Directory] and pulls the contact information for all staff members, which are displayed on a searchable page either within or in addition to `Contacts`. 
+Contacts currently only has a limited number of contacts. It could be directed by writing a web scraper that goes through the [Directory][campus directory] and pulls the contact information for all staff members, which are displayed on a searchable page either within or in addition to `Contacts`. 
 
 ## Major Information
 A list of all majors/minors on campus with links to their requirements and their faculty could be beneficial to students. Faculty have mentioned in the past struggling to get to their own department's major maps.
@@ -73,7 +81,16 @@ Font size is currently the same regardless of device type, screen size, or how t
 Some of the scrapers do not correctly parse time zone information, leading to publication date information being saved in UTC when it should be in EST. This effectively makes the app believe the story was posted at some point in the future. This is handled by displaying that the story was "Posted Recently", which regularly is displayed for stories collected by those scrapers that have this issues, but this should be seen as a bug instead of an expected behavior. Correcting problematic news scrapers should be done at some point.
 
 ### Library Blog
-The Furman Library [has a blog][Library Blog] (with an associated [RSS feed][https://blogs.furman.edu/library-news/feed/]) where they post various articles written by librarians. Miles Dame has requested that we add this to the News Feed, and I seen no reason to deny the request.
+The Furman Library [Library Blog][has a blog] (with an associated [Library RSS][RSS feed]) where they post various articles written by librarians. Miles Dame has requested that we add this to the News Feed, and I seen no reason to deny the request.
+
+### Push Notifications for New Stories
+Allowing users to opt-in to relevant push notifications for specific sources could be useful. These should only come out some period of time after the story is posted so that we will make sure not to spam them with too many if a source posts in bulk. We could also programmatically generate some sort of "week in review" newsletter that is sent out
+
+### Persistent Source Filters & Settings
+Some readers may only want to get news from certain sources, or be able to filter out to only see a few sources at a time, or only pick stories from certain sections of a publication. This can be accomplished in some sense by searching for the publication's name, but that is not persistant, nor does it allow multiple sources to be included simultaneously. Adding these configurations may make it more useable. It could also allow them to toggle on or off the stacking of stories from the same source, or configure push notifications once implemented, or only display student-written content.
+
+## Admissions
+Working with admissions to add features that are targeted towards new students and improving the new student experience could make the app more useful. This could include adding the [Admissions Blog] to the news feed, though this is largely aimed at incoming students rather than current ones, and may not be apt for the campus audience at large, so I would recommend doing so only with consideration.
 
 ---
 [ArcGIS Online Project]: https://services1.arcgis.com/4pYHyjjOPNwIcnDB/arcgis/rest/services/Benches_On_Furman_University_Campus/FeatureServer
@@ -81,3 +98,6 @@ The Furman Library [has a blog][Library Blog] (with an associated [RSS feed][htt
 [Campus Directory]: https://www.furman.edu/people/staff/
 [Library Blog]: https://blogs.furman.edu/library-news/
 [Library RSS]: https://blogs.furman.edu/library-news/feed/
+[Admissions Blog]: https://www.furman.edu/admissions-aid/admission-blog/
+[Furman Weather Station]: https://www.weatherlink.com/embeddablePage/show/8aaa4bd0172f414daaf7ca82d7142383/slim
+[Follett Website]: https://www.bkstr.com/furmanstore/store-hours
